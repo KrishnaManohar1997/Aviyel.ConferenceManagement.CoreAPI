@@ -19,7 +19,15 @@ class TalkRepository:
             talk.participants.add(participant)
             talk.save()
 
+    def remove_participant(self, talk, participant):
+        if talk.participants.filter(id=participant.id):
+            talk.participants.remove(participant)
+
     def add_speaker(self, talk, speaker):
         if self.__is_speaker_or_participant_eligible(talk, speaker):
             talk.speakers.add(speaker)
             talk.save()
+
+    def remove_speaker(self, talk, speaker):
+        if talk.speakers.filter(id=speaker.id):
+            talk.speakers.remove(speaker)

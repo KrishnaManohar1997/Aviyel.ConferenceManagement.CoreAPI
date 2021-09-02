@@ -4,6 +4,7 @@ from talk.views import (
     ConferenceTalkListView,
     CreateTalkView,
     AddSpeakerParticipantsView,
+    RemoveSpeakerParticipantsView,
 )
 
 # v1/conferences/<str:conference_id>/talks/
@@ -16,5 +17,10 @@ urlpatterns = [
     path(
         "<str:talk_id>/add-speaker-participant/",
         AddSpeakerParticipantsView.as_view(),
+    ),
+    # v1/conferences/<str:conference_id>/talks/<str:talk_id>/remove/
+    path(
+        "<str:talk_id>/remove-speaker-participant/",
+        RemoveSpeakerParticipantsView.as_view(),
     ),
 ]

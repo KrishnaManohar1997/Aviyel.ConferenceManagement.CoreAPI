@@ -19,5 +19,11 @@ class TalkService:
     def add_participant(self, talk, participant):
         self.talk_repo.add_participant(talk, participant)
 
+    def remove_participant(self, talk, participant):
+        self.talk_repo.remove_participant(talk, participant)
+
     def add_speaker(self, talk, speaker):
         self.talk_repo.add_speaker(talk, speaker)
+
+    def remove_speaker(self, talk, speaker):
+        self.talk_repo.remove_speaker(talk, speaker)
