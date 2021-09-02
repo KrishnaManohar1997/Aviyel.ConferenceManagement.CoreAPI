@@ -3,7 +3,9 @@ from talk.models import Talk
 
 class TalkRepository:
     def get_talks_by_conference_id(self, conference_id):
-        return Talk.objects.filter(conference_id=conference_id)
+        return Talk.objects.filter(conference_id=conference_id).prefetch_related(
+            "participants", "speakers"
+        )
 
     def get_talk_by_conference_and_talk_id(self, conference_id, talk_id):
         return Talk.objects.get(conference_id=conference_id, id=talk_id)

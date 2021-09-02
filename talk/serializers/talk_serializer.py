@@ -1,8 +1,12 @@
+from user.serializers import UserProfileSerializer
 from talk.models import Talk
 from rest_framework import serializers
 
 
 class TalkSerializer(serializers.ModelSerializer):
+    participants = UserProfileSerializer(read_only=True, many=True)
+    speakers = UserProfileSerializer(read_only=True, many=True)
+
     class Meta:
         model = Talk
         fields = [
@@ -13,6 +17,8 @@ class TalkSerializer(serializers.ModelSerializer):
             "created_by_user",
             "start_date",
             "duration",
+            "participants",
+            "speakers",
         ]
 
 
