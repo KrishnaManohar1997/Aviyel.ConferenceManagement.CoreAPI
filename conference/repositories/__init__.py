@@ -1,0 +1,1 @@
+from .conference_repository import ConferenceRepository
