@@ -14,3 +14,16 @@ class TalkSerializer(serializers.ModelSerializer):
             "start_date",
             "duration",
         ]
+
+
+class CreateTalkSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Talk
+        fields = [
+            "title",
+            "description",
+            "conference",
+            "created_by_user",
+            "start_date",
+            "duration",
+        ]

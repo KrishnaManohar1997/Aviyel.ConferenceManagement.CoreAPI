@@ -3,6 +3,7 @@ from django.db import models
 from common.models import BaseModel
 from conference.models import Conference
 from user.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 
 class Talk(BaseModel):
@@ -12,7 +13,13 @@ class Talk(BaseModel):
         Conference, on_delete=models.CASCADE, related_name="talks"
     )
     start_date = models.DateTimeField(blank=False, null=False)
-    duration = models.DurationField(blank=False, null=False)
+    # Duration in days
+    duration = models.PositiveIntegerField(
+        blank=False,
+        null=False,
+        default=2,
+        validators=[MinValueValidator(1), MaxValueValidator(10)],
+    )
     speakers = models.ManyToManyField(User, related_name="speakers")
     participants = models.ManyToManyField(User, related_name="participants")
 

@@ -1,1 +1,1 @@
-from .talk_serializer import TalkSerializer
+from .talk_serializer import TalkSerializer, CreateTalkSerializer

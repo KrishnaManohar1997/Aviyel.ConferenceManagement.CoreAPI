@@ -1,1 +1,2 @@
 from .conference_talk_list_view import ConferenceTalkListView
+from .create_talk_view import CreateTalkView
