@@ -1,0 +1,17 @@
+Django==3.2.5
+djangorestframework==3.12.4
+
+# PostgreSQL Adapter
+psycopg2
+
+# https://pypi.org/project/python-dotenv/
+# Loads Environment Variables
+python-dotenv==0.18.0
+
+
+# Cors Headers
+django-cors-headers==3.7.0
+
+# Code Formatter
+pre-commit
+black
