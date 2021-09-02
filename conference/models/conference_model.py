@@ -12,11 +12,12 @@ class Conference(BaseModel):
 
     banner_url = models.URLField(max_length=128, blank=True, null=True)
     talks_count = models.PositiveIntegerField(default=0)
+
     start_date = models.DateTimeField(blank=False, null=False)
     end_date = models.DateTimeField(blank=False, null=False)
 
     def __str__(self):
-        return self.email
+        return self.title
 
     class Meta:
         verbose_name = "Conference"
