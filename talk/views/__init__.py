@@ -1,0 +1,1 @@
+from .conference_talk_list_view import ConferenceTalkListView
