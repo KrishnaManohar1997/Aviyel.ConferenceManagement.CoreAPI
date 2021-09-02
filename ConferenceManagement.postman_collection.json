@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "b7f3b89d-9ced-4c22-8358-0f24da982195",
+		"name": "ConferenceManagement",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Conferences",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Conference",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Introduction to Django\",\r\n    \"description\":\"Django is the most Trending Webfrmaework to develop powerful web applications\",\r\n    \"start_date\":\"2021-09-02 15:30:59.908989\",\r\n    \"end_date\":\"2021-09-04 15:30:59.908989\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"create",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Conference",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Introduction to Django\",\r\n    \"description\":\"Django is the most Trending Webfrmaework to develop powerful web applications\",\r\n    \"start_date\":\"2021-09-05 15:30:59.908989\",\r\n    \"end_date\":\"2021-09-06 15:30:59.908989\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/11f10f68-1d3c-4bbf-86a7-3f7298e6e055/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"11f10f68-1d3c-4bbf-86a7-3f7298e6e055",
+						"update",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Talks of Conference",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/11f10f68-1d3c-4bbf-86a7-3f7298e6e055/talks/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"11f10f68-1d3c-4bbf-86a7-3f7298e6e055",
+						"talks",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Participants or Speakers",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"speaker\":\"john12\",\r\n    \"participant\":\"manoj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/11f10f68-1d3c-4bbf-86a7-3f7298e6e055/talks/eb7a08e5-f438-4fa9-90d2-8687db1f27f3/add-speaker-participant/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"11f10f68-1d3c-4bbf-86a7-3f7298e6e055",
+						"talks",
+						"eb7a08e5-f438-4fa9-90d2-8687db1f27f3",
+						"add-speaker-participant",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Talk",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"duration\":2,\r\n    \"start_date\":\"2021-12-05 20:24:02.456560\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/11f10f68-1d3c-4bbf-86a7-3f7298e6e055/talks/eb7a08e5-f438-4fa9-90d2-8687db1f27f3/update/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"11f10f68-1d3c-4bbf-86a7-3f7298e6e055",
+						"talks",
+						"eb7a08e5-f438-4fa9-90d2-8687db1f27f3",
+						"update",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Participants or Speakers",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"speaker\":\"john12\",\r\n    \"participant\":\"manoj\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/11f10f68-1d3c-4bbf-86a7-3f7298e6e055/talks/eb7a08e5-f438-4fa9-90d2-8687db1f27f3/remove-speaker-participant/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"11f10f68-1d3c-4bbf-86a7-3f7298e6e055",
+						"talks",
+						"eb7a08e5-f438-4fa9-90d2-8687db1f27f3",
+						"remove-speaker-participant",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Talk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"IntroductionDjango\",\r\n    \"description\":\"Django is the most Trending Webfrmaework to develop powerful web applications\",\r\n    \"start_date\":\"2021-09-02 15:30:59.908989\",\r\n    \"duration\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/conferences/11f10f68-1d3c-4bbf-86a7-3f7298e6e055/talks/create/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"conferences",
+						"11f10f68-1d3c-4bbf-86a7-3f7298e6e055",
+						"talks",
+						"create",
+						""
+					],
+					"query": [
+						{
+							"key": "conference_admin",
+							"value": "manohar",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

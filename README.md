@@ -2,17 +2,30 @@
 
 Backend to create and manage conferences in the world of Remote Culture
 
-
 # Project Requirements
+
 - Postgres DB
 - Python 3.9 or Higher
 - Install requirements from Requirements.txt file
+
 ## Spinning the Server
 
 `python manage.py runserver`
 
-** Please make sure the Migration Scripts are generated and migrate command is executed once you configure your DB. Necessary commands are instructed below
+### Attached Postman Collection
 
+Please find the following attached collection for Postman API testing
+`ConferenceManagement.postman_collection.json `
+
+\*\* Please make sure the Migration Scripts are generated and migrate command is executed once you configure your DB. Necessary commands are instructed below
+
+## Adding Users for Testing
+
+All the users need to be added (participants or Speakers) are through usernames(Made Username unique).
+
+Please use the following command to create multiple users
+
+`python manage.py createsuperuser`
 
 ### Managing Environment Variables
 
