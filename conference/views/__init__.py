@@ -1,2 +1,3 @@
 from .conference_list_view import ConferenceListView
 from .create_conference_view import CreateConferenceView
+from .update_conference_view import UpdateConferenceView

@@ -18,6 +18,9 @@ class CreateConferenceSerializer(serializers.ModelSerializer):
         ]
 
     def validate_title(self, title):
+        # When Updating same title will be present
+        if self.instance.title == title:
+            return title
         if not self.conference_service.is_title_available(title):
             raise serializers.ValidationError(
                 {"title": "Title is unavailable, please try with another one"}

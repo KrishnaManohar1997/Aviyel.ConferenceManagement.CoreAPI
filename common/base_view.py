@@ -64,6 +64,7 @@ class BaseView(APIView):
         )
 
     def serializer_error_response(self, message, serializer_errors: dict):
+        print(serializer_errors)
         serializer_errors = " ".join(
             [
                 error_key + ":" + error_detail[0]
