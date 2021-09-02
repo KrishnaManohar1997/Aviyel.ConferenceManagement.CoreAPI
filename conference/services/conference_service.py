@@ -21,3 +21,6 @@ class ConferenceService:
             return self.conference_repo.get_conference_by_id(conference_id)
         except Conference.DoesNotExist:
             return None
+
+    def is_title_available(self, title):
+        return self.conference_repo.is_title_available(title)

@@ -63,5 +63,14 @@ class BaseView(APIView):
             {"result": True, "message": message, "data": data}
         )
 
+    def serializer_error_response(self, message, serializer_errors: dict):
+        serializer_errors = " ".join(
+            [
+                error_key + ":" + error_detail[0]
+                for error_key, error_detail in serializer_errors.items()
+            ]
+        )
+        return self.bad_request_response("{}. {}".format(message, serializer_errors))
+
     class Meta:
         abstract = True

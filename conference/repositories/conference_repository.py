@@ -17,3 +17,6 @@ class ConferenceRepository:
         # Atomic Increment
         conference.talks_count = F("talks_count") + 1
         conference.save(update_fields=["talks_count"])
+
+    def is_title_available(self, title):
+        return not Conference.objects.filter(title__iexact=title).exists()
