@@ -19,7 +19,7 @@ class User(AbstractUser, BaseModel):
     user_permissions = None
 
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ["username", "name"]
+    REQUIRED_FIELDS = ["username"]
 
     def __str__(self):
         return self.email
